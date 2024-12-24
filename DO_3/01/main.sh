@@ -1,12 +1,15 @@
  #!/bin/bash
 
-   # Check if the parameter is provided
-   if [ -z "$#" ]; then
+   if [ "$#" -eq 0 ]; then
        echo "No input provided."
        exit 1
    fi
+
+   if [ $# -gt 1 ]; then
+       echo "Invalid input: more then one parametr"
+       exit 1
+   fi
    input="$1"
-   # Check if the parameter is a number
    if [[ "$input" =~ ^-?[0-9]+$ ]]; then
        echo "Invalid input: Number provided."
    else

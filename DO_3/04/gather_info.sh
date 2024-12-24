@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Gather system information
 gather_info() {
     HOSTNAME=$(hostname)
     TIMEZONE=$(cat /etc/timezone)$(date +" UTC %:z")
@@ -18,5 +17,4 @@ gather_info() {
     SPACE_ROOT=$(df / | awk 'NR==2 {printf "%.2f MB\n", $2 / 1024}')
     SPACE_ROOT_USED=$(df / | awk 'NR==2 {printf "%.2f MB\n", $3 / 1024}')
     SPACE_ROOT_FREE=$(df / | awk 'NR==2 {printf "%.2f MB\n", $4 / 1024}')
-
 }
